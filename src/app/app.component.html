@@ -1,0 +1,30 @@
+<!-- <div style="padding: 10px 0">  
+  <input type="text" placeholder="Search places..." [(ngModel)]="query" style="width: 90%;" />  
+  <button (click)="places(query)">Search</button>  
+</div> -->
+<p-autoComplete [(ngModel)]="placeName" [suggestions]="results" placeholder="Search places..."
+  (completeMethod)="searchHandler($event)" field="title" (onSelect)="onSelectPlace($event)">
+  <ng-template let-placeName pTemplate="item">
+    <div class="ui-helper-clearfix">
+        <i class="pi pi-map-marker" style="font-size: 24px; float: left; margin: 0 10px 0px 0px;"></i>
+
+        <div style="font-size:18px;float:left;margin:10px 10px 0 0">{{placeName.title}}</div>
+        <div style="font-size:14px; color:#9d9d9d;float:left;margin:10px 10px 0 0">{{placeName.vicinity}}</div>
+    </div>
+</ng-template>
+</p-autoComplete>
+
+<div #map [style.width]="width" [style.height]="height"></div>  
+  
+<div style="padding: 10px 0">
+  <div class="col-xxl-12">
+    <div class="red-800">
+      <label>Latitude : {{lat}}</label>
+      <label>Longitude : {{lng}}</label>
+    </div>
+    <div class="blue-800">
+      <label>Address : {{address}}</label>
+    </div>
+  </div>
+</div>
+<!-- [(ngModel)]="query" -->

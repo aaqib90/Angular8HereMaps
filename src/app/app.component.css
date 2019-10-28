@@ -1,0 +1,12 @@
+:host /deep/ .ui-autocomplete {
+    width: 400px !important;
+    zoom: 1;
+    cursor: pointer;
+    box-shadow: none;
+    position: relative;
+    display: inline-block;
+}
+:host /deep/ .ui-autocomplete .ui-autocomplete-input {
+    width: 400px !important;
+
+}
